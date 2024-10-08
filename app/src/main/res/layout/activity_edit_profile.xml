@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- App Bar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageBackEditProfile"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_backward"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="Edit Profile"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@id/imageBackEditProfile"
+                    app:layout_constraintStart_toEndOf="@id/imageBackEditProfile"
+                    app:layout_constraintTop_toTopOf="@id/imageBackEditProfile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Profile Image Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/toolbarEditProfile"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_profile_placeholder"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnChangeProfileImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Profile Image"
+                android:layout_marginBottom="32dp"
+                android:textColor="@color/white"
+                android:background="@color/blue" />
+        </LinearLayout>
+
+<!--        &lt;!&ndash; Name Input Field &ndash;&gt;-->
+<!--        <TextInputLayout-->
+<!--            android:id="@+id/inputLayoutName"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/btnChangeProfileImage"-->
+<!--            android:layout_marginBottom="16dp">-->
+
+<!--            <TextInputEditText-->
+<!--                android:id="@+id/etName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Enter your name"-->
+<!--                android:textColorHint="@color/g_icon_tint" />-->
+<!--        </TextInputLayout>-->
+
+<!--        &lt;!&ndash; Deactivate Account Button &ndash;&gt;-->
+<!--        <Button-->
+<!--            android:id="@+id/btnDeactivateAccount"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Deactivate Account"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:background="@color/red"  &lt;!&ndash; Replace with your color &ndash;&gt;-->
+<!--        app:layout_constraintTop_toBottomOf="@id/inputLayoutName" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

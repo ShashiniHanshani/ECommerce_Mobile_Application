@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOrderDetails"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageCloseOrder"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_backward"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:text="#1234567"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageCloseOrder"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linearStepView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/toolbarOrderDetails">
+
+            <!-- Pending status rectangle with text -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp">
+
+                <View
+                    android:id="@+id/viewPending"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/red" />
+
+                <TextView
+                    android:id="@+id/textPending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Pending"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <!-- Processing status rectangle with text -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp">
+
+                <View
+                    android:id="@+id/viewProcessing"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/g_icon_tint" />
+
+                <TextView
+                    android:id="@+id/textProcessing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Processing"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+            <!-- Delivered status rectangle with text -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1">
+
+                <View
+                    android:id="@+id/viewDelivered"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/g_icon_tint" />
+
+                <TextView
+                    android:id="@+id/textDelivered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Delivered"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tvShippingAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/linearStepView"
+            app:drawableTint="@color/black"
+            app:drawableLeftCompat="@drawable/ic_baseline_location_on_24" />
+
+        <LinearLayout
+            android:id="@+id/linearAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/tvShippingAddress">
+
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shashini Hanshani"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Veyangoda Gampaha"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0765000000"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="1sp"
+            android:layout_marginTop="15dp"
+            android:background="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/linearAddress"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            android:backgroundTint="@color/blue"
+            />
+
+        <TextView
+            android:id="@+id/tvProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Products"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:drawableTint="@color/black"
+            app:drawableLeftCompat="@drawable/ic_cart"
+            android:drawablePadding="5dp"/>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvProducts"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="@id/line1"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guideline2"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tvProducts"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            tools:listitem="@layout/billing_products_rv_item"-->
+<!--            />-->
+
+        <!-- Buttons Layout -->
+
+        <ImageView
+            android:id="@+id/imageProducts"
+            android:layout_width="257dp"
+            android:layout_height="99dp"
+            android:layout_marginBottom="200dp"
+            android:src="@drawable/one"
+            app:layout_constraintBottom_toTopOf="@+id/linear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/total_box_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/rvProducts">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:layout_weight="1"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="Rs.182,300.00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/linear"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            android:layout_marginBottom="20dp">
+
+            <!-- Button to cancel the order -->
+            <Button
+                android:id="@+id/buttonCancelOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:text="Cancel Order"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red" />
+
+            <!-- Button to track the order -->
+            <Button
+                android:id="@+id/buttonTrackOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Update Order"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blue" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
